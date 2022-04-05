@@ -434,7 +434,7 @@ def gillespie(compartmentList,intraRuleList,interRuleList,finTime,maxIts):
                         else:
                             modifier = 0 
                             
-                        interRuleList[k].kineticConst = interRuleList[k].kineticFunct(compartmentList[i].interParams[k][i][j],compartmentList[i],compartmentList,(startingIncrement+incrementNo+1)*increment)
+                        interRuleList[k].kineticConst = interRuleList[k].kineticFunct(compartmentList[i].interParams[k][i][j],compartmentList[i],compartmentList,(startingIncrement+incrementNo)*increment)
                         root.childeren[1].childeren[i].childeren[j].childeren[k].partSum = interRuleList[k].calculatePropensity(compartmentList[i])
 
             root.updatePartSum()            
